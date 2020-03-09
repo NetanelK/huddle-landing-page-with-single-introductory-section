@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0; margin: 0;
+}
+
+$primary: hsl(257, 40%, 49%);
+
+@mixin desktop {
+    @media (min-width: 720px) {
+        @content;
+    }
+}
+
+body{
+    font: 400 18px "Open Sans", sans-serif;
+    background: url("../images/bg-mobile.svg") $primary no-repeat center top;
+    background-size: 100%;
+    // font-family: 'Open Sans';
+
+    @include desktop(){
+        background: url("../images/bg-desktop.svg") $primary no-repeat;
+        background-size: 100%;
+        // padding-top: 5em;
+    }
+}
+
+.container {
+    color: white;
+    text-align: center;
+    padding: 1em;
+    max-width: 375px;
+    margin: 0 auto;
+
+    @include desktop(){
+        max-width: 90%;
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-areas: 
+            "logo ."
+            "img content"
+            ". social";
+    }
+
+    .logo-warp{
+        text-align: left;
+
+        @include desktop(){
+            width: 70%;
+            margin-bottom: 1.5em;
+            grid-area: logo;
+        }
+
+        .logo{
+            width: 40%;
+            margin: 1em 0 3em .75em;
+        }
+    }
+
+    
+
+    .illustration{
+        width: 90%;
+
+        @include desktop(){
+            grid-area: img;
+        }
+    }
+
+    .content{
+        @include desktop(){
+            grid-area: content;
+            max-width: 600px;
+            text-align: left;
+
+            h1{
+                font-size: 2.5em;
+            }
+
+            button{
+                width: 30%;
+            }
+        }
+    }
+
+    h1{
+        font: 400 1.5em 'Poppins', sans-serif;
+        margin: 1em 0 .5em 0;
+    }
+
+    p{
+        font-weight: 400;
+        line-height: 1.65;
+        margin: 1em 0 1.5em 0;
+    }
+
+    button{
+        color: $primary;
+        background-color: white;
+        border-radius: 25px;
+        border: none;
+        padding: 1em;
+        width: 70%;
+
+        font-family: 'Poppins';
+        box-shadow: 0 10px 5px rgba($color: #000000, $alpha: .1);
+    }
+
+    .social{
+        text-align: center;
+        $paddings: ( fa-facebook-f :6px 9px, fa-twitter: 6px, fa-instagram: 6px);
+
+        @include desktop(){
+            grid-area: social;
+            text-align: right;
+            margin-right: 5em;
+        }
+
+        .fab{
+            border: 1px solid white;
+            border-radius: 50%;
+            transform: scale(.75);
+            margin-top: 2em;
+
+            @each $name ,$padding in $paddings {
+                &.#{$name}{
+                    padding: $padding;
+                }
+            }
+        }
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; color:white;}
+.attribution a { color: black; }

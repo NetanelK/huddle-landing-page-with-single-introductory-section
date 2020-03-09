@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: 400 18px "Open Sans", sans-serif;
+  background: url("../images/bg-mobile.svg") #674baf no-repeat center top;
+  background-size: 100%;
+}
+
+@media (min-width: 720px) {
+  body {
+    background: url("../images/bg-desktop.svg") #674baf no-repeat;
+    background-size: 100%;
+  }
+}
+
+.container {
+  color: white;
+  text-align: center;
+  padding: 1em;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+@media (min-width: 720px) {
+  .container {
+    max-width: 90%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "logo ." "img content" ". social";
+  }
+}
+
+.container .logo-warp {
+  text-align: left;
+}
+
+@media (min-width: 720px) {
+  .container .logo-warp {
+    width: 70%;
+    margin-bottom: 1.5em;
+    grid-area: logo;
+  }
+}
+
+.container .logo-warp .logo {
+  width: 40%;
+  margin: 1em 0 3em .75em;
+}
+
+.container .illustration {
+  width: 90%;
+}
+
+@media (min-width: 720px) {
+  .container .illustration {
+    grid-area: img;
+  }
+}
+
+@media (min-width: 720px) {
+  .container .content {
+    grid-area: content;
+    max-width: 600px;
+    text-align: left;
+  }
+  .container .content h1 {
+    font-size: 2.5em;
+  }
+  .container .content button {
+    width: 30%;
+  }
+}
+
+.container h1 {
+  font: 400 1.5em 'Poppins', sans-serif;
+  margin: 1em 0 .5em 0;
+}
+
+.container p {
+  font-weight: 400;
+  line-height: 1.65;
+  margin: 1em 0 1.5em 0;
+}
+
+.container button {
+  color: #674baf;
+  background-color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 1em;
+  width: 70%;
+  font-family: 'Poppins';
+  -webkit-box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container .social {
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .container .social {
+    grid-area: social;
+    text-align: right;
+    margin-right: 5em;
+  }
+}
+
+.container .social .fab {
+  border: 1px solid white;
+  border-radius: 50%;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  margin-top: 2em;
+}
+
+.container .social .fab.fa-facebook-f {
+  padding: 6px 9px;
+}
+
+.container .social .fab.fa-twitter {
+  padding: 6px;
+}
+
+.container .social .fab.fa-instagram {
+  padding: 6px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+
+.attribution a {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */
